@@ -1,0 +1,43 @@
+@media screen and (max-width: 1150px) {
+  header {
+    display: block;
+
+    #div1 {
+      display: flex;
+      width: fit-content;
+      margin: auto;
+      padding-left: 3rem;
+    }
+
+    nav {
+      display: none;
+
+      ul {
+        display: block;
+        width: 100%;
+        li{
+          padding: 1rem;
+        }
+        a {
+          margin: 0 40;
+          text-align: center;
+          width: 100%;
+          display: block;
+        }
+      }
+    }
+    button {
+      display: inline;
+    }
+  }
+
+  main {
+    #wrapper {
+      display: block;
+
+      .card {
+        margin: 2rem auto;
+      }
+    }
+  }
+}

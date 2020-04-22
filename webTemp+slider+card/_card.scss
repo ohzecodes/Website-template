@@ -1,0 +1,73 @@
+@mixin card-flip($deg) {
+  transform: perspective(1000px) rotateY($deg);
+  backface-visibility: hidden; // you dont wanna see back when the transition is happening
+  transition: transform 0.5s linear 0s;
+}
+@mixin hovers($deg) {
+  transform: perspective(1000px) rotateY($deg);
+}
+
+#wrapper {
+  display: flex;
+  position: relative;
+}
+.card {
+  width:19rem ;
+  height: 15rem;
+  text-align: center;
+  border: 2px solid purple;
+ 
+  margin: 1rem 5rem;
+  
+  overflow: hidden;
+  position: relative;
+  border-radius: 100%;
+  .card-front {
+    position: absolute;
+    overflow: hidden;
+    z-index: 1;
+    display: block;
+    transition: 2s ease;
+    height: 100%;
+    width: 100%;
+
+    img {
+      height: 100%;
+      width: 100%;
+    }
+  }
+  .card-back {
+    z-index: 0;
+    opacity: 1;
+    position: relative;
+    transition: 4s ease;
+  }
+}
+
+.card.fade:hover {
+  .card-front {
+    opacity: 0.2;
+  }
+  .onhover {
+    opacity: 1;
+  }
+}
+
+.card.flip {
+  .card-front {
+    @include card-flip(0deg);
+  }
+  .card-back {
+    @include card-flip(180deg);
+  }
+}
+
+.card.flip:hover {
+  .card-front {
+    @include hovers(-180deg);
+  }
+
+  .card-back {
+    @include hovers(0deg);
+  }
+}

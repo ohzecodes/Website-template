@@ -1,0 +1,82 @@
+#wrapper {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  position: relative;
+}
+
+.card {
+  width: 19rem;
+  height: 15rem;
+  text-align: center;
+  border: 2px solid purple;
+  margin: 1rem 5rem;
+  overflow: hidden;
+  position: relative;
+  border-radius: 100%;
+}
+
+.card .card-front {
+  position: absolute;
+  overflow: hidden;
+  z-index: 1;
+  display: block;
+  -webkit-transition: 2s ease;
+  transition: 2s ease;
+  height: 100%;
+  width: 100%;
+}
+
+.card .card-front img {
+  height: 100%;
+  width: 100%;
+}
+
+.card .card-back {
+  z-index: 0;
+  opacity: 1;
+  position: relative;
+  -webkit-transition: 4s ease;
+  transition: 4s ease;
+}
+
+.card.fade:hover .card-front {
+  opacity: 0.2;
+}
+
+.card.fade:hover .onhover {
+  opacity: 1;
+}
+
+.card.flip .card-front {
+  -webkit-transform: perspective(1000px) rotateY(0deg);
+          transform: perspective(1000px) rotateY(0deg);
+  -webkit-backface-visibility: hidden;
+          backface-visibility: hidden;
+  -webkit-transition: -webkit-transform 0.5s linear 0s;
+  transition: -webkit-transform 0.5s linear 0s;
+  transition: transform 0.5s linear 0s;
+  transition: transform 0.5s linear 0s, -webkit-transform 0.5s linear 0s;
+}
+
+.card.flip .card-back {
+  -webkit-transform: perspective(1000px) rotateY(180deg);
+          transform: perspective(1000px) rotateY(180deg);
+  -webkit-backface-visibility: hidden;
+          backface-visibility: hidden;
+  -webkit-transition: -webkit-transform 0.5s linear 0s;
+  transition: -webkit-transform 0.5s linear 0s;
+  transition: transform 0.5s linear 0s;
+  transition: transform 0.5s linear 0s, -webkit-transform 0.5s linear 0s;
+}
+
+.card.flip:hover .card-front {
+  -webkit-transform: perspective(1000px) rotateY(-180deg);
+          transform: perspective(1000px) rotateY(-180deg);
+}
+
+.card.flip:hover .card-back {
+  -webkit-transform: perspective(1000px) rotateY(0deg);
+          transform: perspective(1000px) rotateY(0deg);
+}
+/*# sourceMappingURL=card.css.map */

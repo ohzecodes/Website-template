@@ -1,0 +1,30 @@
+          // css here 
+  #slidhere {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  #myimg {
+    z-index: 1;
+  }
+  #slicon {
+    position: relative;
+  }
+  #sliderbtns {
+    position: relative;
+    bottom: 30px;
+    left: 50%;
+  }
+  .move {
+    position: absolute;
+    top: 50%;
+    width: 50px;
+    height: 50px;
+    background-color: black;
+    color: white;
+    border: none;
+    opacity: 0.3;
+  }
+  .move:hover {opacity: 0.7;}
+  #btngt {right: 0;}
+  #btnlt {  z-index: 3;}
