@@ -52,14 +52,16 @@
     // console.log();
     elem_im.src = img[which].src;
     elem_im.alt = img[which].alt;
+    document.getElementsByClassName('slibutton')[which].checked = true;
+
   }
 
 
   function run_right(b) {
     init(which);
-    console.log(which, which < img.length);
+    // console.log(which, which < img.length);
 
-    if (which < 2) {
+    if (which < img.length-1) {
       which++;
     } else {
       which = 0;
@@ -73,8 +75,10 @@
 
   function run_left() {
     if (which == 0) {
-      which = 2;
-    } else which -= 1;
+      which = img.length-1;
+    } else {which -= 1;}
+
+    init(which)
   }
 
   document.getElementById("btnlt").onclick=run_left;

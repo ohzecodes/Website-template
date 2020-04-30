@@ -47,6 +47,12 @@ header #div1 figure img {
   display: block;
   margin-left: auto;
   margin-right: auto;
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
+  height: -webkit-fit-content;
+  height: -moz-fit-content;
+  height: fit-content;
 }
 
 #myimg {
@@ -58,6 +64,9 @@ header #div1 figure img {
 }
 
 #sliderbtns {
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
   position: relative;
   bottom: 30px;
   left: 50%;
@@ -206,6 +215,33 @@ header #div1 figure img {
   }
   main #wrapper .card {
     margin: 2rem auto;
+  }
+}
+
+@media screen and (max-width: 950px) and (min-width: 400px) {
+  #slidhere #slicon .move {
+    top: 40%;
+  }
+}
+
+@media screen and (max-width: 600px) and (min-width: 501px) {
+  #slidhere #slicon .move {
+    width: 40px;
+    height: 40px;
+  }
+  #slidhere #slicon #sliderbtns {
+    left: 45%;
+  }
+}
+
+@media screen and (max-width: 500px) {
+  #slidhere #slicon .move {
+    width: 40px;
+    height: 40px;
+    top: 30%;
+  }
+  #slidhere #slicon #sliderbtns {
+    display: none;
   }
 }
 /*# sourceMappingURL=style.css.map */
